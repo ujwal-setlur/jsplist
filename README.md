@@ -3,7 +3,7 @@ A simple JavaScript utility to parse, edit, and convert plist/json files
 
 	Install: npm install -g jsplist
 
-  Usage: jsplist [options] <file>
+  Usage: jsplist [options] `<file`>
 
   Options:
 
