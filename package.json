@@ -1,0 +1,34 @@
+{
+  "name": "jsplistutil",
+  "version": "0.0.1",
+  "description": "A simple JavaScript utility to parse and manipulate plist files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujwal-setlur/jsplistutil.git"
+  },
+  "keywords": [
+    "plist",
+    "parser",
+    "editor",
+    "npm"
+  ],
+  "author": "Ujwal Setlur",
+  "license": "MIT",
+  "bin": {
+    "jsplistutil": "./index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ujwal-setlur/jsplistutil/issues"
+  },
+  "homepage": "https://github.com/ujwal-setlur/jsplistutil#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "lodash": "^4.17.4",
+    "plist": "^2.1.0"
+  }
+}
