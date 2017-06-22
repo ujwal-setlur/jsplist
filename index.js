@@ -28,24 +28,24 @@ program
   .parse(process.argv);
 
 if (!theFile) {
-  console.error(chalk.red("jsplistutil: missing file argument"));
+  console.error(chalk.red("jsplist: missing file argument"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 
 if (program.set && program.get) {
-  console.error(chalk.red("jsplistutil: get and set operations cannot be used together"));
+  console.error(chalk.red("jsplist: get and set operations cannot be used together"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 if (program.get && program.value) {
-  console.error(chalk.red("jsplistutil: value can be used with set operation only"));
+  console.error(chalk.red("jsplist: value can be used with set operation only"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 if (program.set && !program.value) {
-  console.error(chalk.red("jsplistutil: missing value argument"));
+  console.error(chalk.red("jsplist: missing value argument"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 if (!program.set && program.value) {
-  console.error(chalk.red("jsplistutil: missing argument"));
+  console.error(chalk.red("jsplist: missing argument"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 
@@ -53,7 +53,7 @@ if (!program.set && program.value) {
 try {
   theObject = plist.parse(fs.readFileSync(theFile, "utf8"));
 } catch (e) {
-  console.error(chalk.red("jsplistutil:", e));
+  console.error(chalk.red("jsplist:", e));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 
@@ -70,7 +70,7 @@ if (program.get) {
       console.log(theValue);
     }
   } catch (e) {
-    console.error(chalk.red("jsplistutil:", e));
+    console.error(chalk.red("jsplist:", e));
     process.exit(1); // eslint-disable-line no-process-exit
   }
 } else if (program.set) {
@@ -86,7 +86,7 @@ if (program.get) {
     // Output the new file
     console.log(plist.build(theObject));
   } catch (e) {
-    console.error(chalk.red("jsplistutil:", e));
+    console.error(chalk.red("jsplist:", e));
     process.exit(1); // eslint-disable-line no-process-exit
   }
 } else {
