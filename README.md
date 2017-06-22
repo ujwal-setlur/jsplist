@@ -1,5 +1,5 @@
 # jsplist
-A simple JavaScript utility to parse and manipulate plist files
+A simple JavaScript utility to parse, edit, and convert plist/json files
 
 	Install: npm install -g jsplist
 
