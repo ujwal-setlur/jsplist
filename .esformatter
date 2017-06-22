@@ -1,0 +1,59 @@
+{
+    "preset": "default",
+
+    "plugins": [
+        "esformatter-quotes",
+        "esformatter-spaced-lined-comment", 
+        "esformatter-collapse-objects", 
+        "esformatter-remove-trailing-commas", 
+        "esformatter-jsx"
+    ],
+
+    "collapseObjects": {
+        "ObjectExpression": {
+            "maxLineLength": 79,
+            "maxKeys": 0
+        }
+    },
+
+    "quotes": {
+        "type": "double"
+    },
+
+    "indent": {
+        "value": "  ",
+        "AlignComments": false
+    },
+
+    "whiteSpace": {
+        "before": {
+            "ObjectExpressionClosingBrace": 0,
+            "ModuleSpecifierClosingBrace": 1,
+            "PropertyName": 1
+        },
+        "after": {
+            "ObjectExpressionOpeningBrace": 0,
+            "ModuleSpecifierOpeningBrace": 1
+        }
+    },
+
+    "jsx": {
+        "formatJSXExpressions": true,
+        "JSXExpressionsSingleLine": false,
+        "formatJSX": true,
+        "attrsOnSameLineAsTag": false,
+        "maxAttrsOnTag": 1,
+        "firstAttributeOnSameLine": false,
+        "spaceInJSXExpressionContainers": "",
+        "alignWithFirstAttribute": false,
+        "closingTagOnNewLine": true,
+        "htmlOptions": {
+            "brace_style": "collapse",
+            "indent_char": " ",
+            "indent_size": 2,
+            "max_preserve_newlines": 2,
+            "preserve_newlines": true,
+            "wrap_line_length": 250
+        }
+    }
+}
