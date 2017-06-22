@@ -1,7 +1,7 @@
 # jsplistutil
 A simple JavaScript utility to parse and manipulate plist files
 
-	Install: npm install jsplistutil
+	Install: npm install -g jsplistutil
 
   Usage: jsplistutil [options] <file>
 
