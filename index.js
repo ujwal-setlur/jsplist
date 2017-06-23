@@ -24,7 +24,7 @@ program
   .option("-g, --get <get>", "Get value of comma delimited (for nested) property name")
   .option("-s, --set <set>", "Set value of comma delimited (for nested) property name")
   .option("-v, --value <value>", "The value to set for entry in JSON notation")
-  .option("-c, --convert <convert>", "The output format: plist/json, default plist", "plist")
+  .option("-f, --format <format>", "The output format: plist/json, default plist", "plist")
   .action(function(file) {
     theFile = file;
   })
@@ -43,8 +43,8 @@ if (program.get && program.value) {
   console.error(chalk.red("jsplist: value can be used with set operation only"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
-if (program.get && program.convert) {
-  console.error(chalk.red("jsplist: convert cannot be used with get operation"));
+if (program.get && program.format) {
+  console.error(chalk.red("jsplist: format cannot be used with get operation"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 if (program.set && !program.value) {
@@ -55,8 +55,8 @@ if (!program.set && program.value) {
   console.error(chalk.red("jsplist: missing argument"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
-if (!supportedFormats.includes(program.convert)) {
-  console.error(chalk.red("jsplist: unsupported output format " + program.convert));
+if (!supportedFormats.includes(program.format)) {
+  console.error(chalk.red("jsplist: unsupported output format " + program.format));
   process.exit(1); // eslint-disable-line no-process-exit
 }
 
@@ -109,14 +109,14 @@ if (program.get) {
     // Set the value!
     _.set(theObject, accessorArray, theValue);
     // Output the new file
-    outputFile(theObject, program.convert);
+    outputFile(theObject, program.format);
   } catch (e) {
     console.error(chalk.red("jsplist:", e));
     process.exit(1); // eslint-disable-line no-process-exit
   }
 } else {
   // Just output the file
-  outputFile(theObject, program.convert);
+  outputFile(theObject, program.format);
 }
 
 function outputFile(obj, format) {

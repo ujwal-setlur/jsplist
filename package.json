@@ -1,6 +1,6 @@
 {
   "name": "jsplist",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A simple JavaScript utility to parse and manipulate plist files",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "plist",
     "parser",
     "editor",
-    "npm"
+    "npm",
+    "json",
+    "convert"
   ],
   "author": "Ujwal Setlur",
   "license": "MIT",
