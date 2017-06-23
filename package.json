@@ -1,6 +1,6 @@
 {
   "name": "jsplist",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple JavaScript utility to parse and manipulate plist files",
   "main": "index.js",
   "scripts": {

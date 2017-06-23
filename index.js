@@ -72,11 +72,12 @@ try {
 try {
   theObject = plist.parse(theFileBuffer);
 } catch (plistException) {
-  console.log("plist parse error: " + plistException);
   // try json
   try {
     theObject = JSON.parse(theFileBuffer);
   } catch (jsonException) {
+    console.error(chalk.red("jsplist: error parsing file, tried both plist and json"));
+    console.error(chalk.red("jsplist:", plistException));
     console.error(chalk.red("jsplist:", jsonException));
     process.exit(1); // eslint-disable-line no-process-exit
   }
