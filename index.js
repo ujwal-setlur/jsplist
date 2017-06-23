@@ -24,7 +24,7 @@ program
   .option("-g, --get <get>", "Get value of comma delimited (for nested) property name")
   .option("-s, --set <set>", "Set value of comma delimited (for nested) property name")
   .option("-v, --value <value>", "The value to set for entry in JSON notation")
-  .option("-f, --format <format>", "The output format: plist/json, default plist", "plist")
+  .option("-f, --format <format>", "The output format: plist/json, default plist")
   .action(function(file) {
     theFile = file;
   })
@@ -55,7 +55,7 @@ if (!program.set && program.value) {
   console.error(chalk.red("jsplist: missing argument"));
   process.exit(1); // eslint-disable-line no-process-exit
 }
-if (!supportedFormats.includes(program.format)) {
+if (program.format && !supportedFormats.includes(program.format)) {
   console.error(chalk.red("jsplist: unsupported output format " + program.format));
   process.exit(1); // eslint-disable-line no-process-exit
 }
@@ -120,6 +120,9 @@ if (program.get) {
 }
 
 function outputFile(obj, format) {
+  if (!format) {
+    format = "plist";
+  }
   if (format === "plist") {
     console.log(plist.build(obj));
   } else {
