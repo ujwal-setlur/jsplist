@@ -127,7 +127,7 @@ function outputFile(obj, format) {
   if (format === "plist") {
     console.log(plist.build(obj));
   } else {
-    console.log(JSON.stringify(obj));
+    console.log(JSON.stringify(obj, null, 2));
   }
 }
 
